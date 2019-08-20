@@ -2,7 +2,7 @@
 layout: post
 title:  Tarea 2
 date:   2015-03-15 16:40:16
-description: march & april, looking forward to summer
+description: Modelo PAC generalizado y predictores lineales
 ---
 Jea
 
