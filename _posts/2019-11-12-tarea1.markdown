@@ -12,21 +12,16 @@ El objetivo de los siguientes puntos es obtener muestras
 
 Se definirá una función para tener los conjuntos de entrenamiento, dicha función es la siguiente:
 
-{
 
 	def muestra(muestras):
    	return np.random.uniform(0,2,(muestras,2))
-}
 
 Para implementar una clase de hipótesis h: que vaya de X al conjunto de {0,1} y esto será para todo h en X.
 
-{
 
 	def claseH(l):
     	return np.linspace(0,1,round(1/l))
 	
-}
-
 Ahora para calcular los errores de generalización se definirá la siguiente función en python.
 
 
