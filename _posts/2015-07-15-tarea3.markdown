@@ -19,3 +19,4 @@ La dimensión VC es una medida de la capacidad de un clasificador binario. Es de
 Aprendibilidad:
 
 
+
