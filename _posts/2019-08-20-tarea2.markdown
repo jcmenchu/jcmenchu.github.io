@@ -42,11 +42,12 @@ Donde w sigue siendo el predictor mencionado anteriormente. Teniendo esto se obt
 
 Vemos que las muestras están distribuidas uniformemente
 
+En el siguiente paso se gráficarán las muestras de 1, 2,..1000 por lo cual vamos a tomar conjuntos de 100 muestras cada uno. Se calculará el promedio de las normas de cada conjunto de entrenamiento. A continuación se mostrarán tres gráficas que mostrarán el conjunto de 100 muestras de entrenamiento en conjunto. 
+
+<div class="img_row">
+	<img class="col one" src="/img/conjunto1.jpg">
+	<img class="col one" src="/img/conjunto2.jpg">
+</div>
 
 
-int main(int argc, char const *argv[])
-{
-	
-}
-
-{% endhighlight %}
+Vemos que conforme se va aumenta la muestra de 100 en 100 hasta 1000, este tiende a la norma máxima.
