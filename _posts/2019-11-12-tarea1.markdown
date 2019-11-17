@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tarea 1
-date: 2019-11-12 09:00:00
+date: 2019-08-13 09:00:00
 description: Modelo de aprendizaje PAC
 ---
 En este capitulo vamos a considerar el algoritmo de Percetrón, y un ejemplo para ver su implementación. Para esto se considerará una clasificación en R^2
