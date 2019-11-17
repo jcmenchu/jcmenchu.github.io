@@ -4,9 +4,45 @@ title: Tarea 1
 date: 2019-08-13 09:00:00
 description: Modelo de aprendizaje PAC
 ---
-En este capitulo vamos a considerar el algoritmo de Percetrón, y un ejemplo para ver su implementación. Para esto se considerará una clasificación en R^2
+Para este primer cápitulo haremos una introducción al model de aprendizaje PAC.
 
-Se implementó el código en python y se obtuvo la siguiente gráfica:
+Los primeros tres ejercicios fueron enviados a Canvas. Por lo que en esto se procederá únicamente al procedimiento númerico con python.
+
+El objetivo de los siguientes puntos es obtener muestras
+
+Se definirá una función para tener los conjuntos de entrenamiento, dicha función es la siguiente:
+
+{
+
+	def muestra(muestras):
+   		return np.random.uniform(0,2,(muestras,2))
+}
+
+Para implementar una clase de hipótesis h: que vaya de X al conjunto de {0,1} y esto será para todo h en X.
+
+{
+
+	def claseH(l):
+    		return np.linspace(0,1,round(1/l))
+	
+}
+
+Ahora para calcular los errores de generalización se definirá la siguiente función en python.
+
+{
+
+	def ErrorG(h):
+	    cota = 1-1/np.sqrt(2)
+	    if h < cota:
+		return 1/2-2*h+h**2
+	    elif h > cota:
+		return -1/2+2*h-h**2
+	    else:
+		return 0
+}
+
+
+
 
 <div class="img_row">
 	<img class="col one" src="/img/predictor.jpg">
