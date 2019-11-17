@@ -29,7 +29,6 @@ Para implementar una clase de hipótesis h: que vaya de X al conjunto de {0,1} y
 
 Ahora para calcular los errores de generalización se definirá la siguiente función en python.
 
-{
 
 	def ErrorG(h):
 	    cota = 1-1/np.sqrt(2)
@@ -39,8 +38,6 @@ Ahora para calcular los errores de generalización se definirá la siguiente fun
 		return -1/2+2*h-h**2
 	    else:
 		return 0
-}
-
 
 
 
