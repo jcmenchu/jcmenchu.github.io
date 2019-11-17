@@ -4,9 +4,7 @@ title: Tarea 2
 date: 2019-08-20 08:00:00
 description: Modelo PAC generalizado y predictores lineales
 ---
-This theme implements a built-in Jekyll feature, the use of Pygments, for sytanx highlighting. It supports more than 100 languages. This example is in C++. All you have to do is wrap your code in a liquid tag: 
-{% raw  %}
-{% highlight c++ %}  <br/> code code code <br/> {% endhighlight %}{% endraw %}
+En este capitulo vamos a considerar el algoritmo de Percetrón, y un ejemplo para ver su implementación. Para esto se considerará una clasificación en R^2
 
 Produces something like this: 
 
