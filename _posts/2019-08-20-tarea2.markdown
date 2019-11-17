@@ -16,45 +16,37 @@ Como se puede observar el la gráfica, en este se tiene el predictor que está d
 
 Para el siguiente punto, se supondrá que la distribución es homogénea, entonces, para generar puntos aleatorios en R^2. Se considerará una distribución uniforme en R^2. A continuación se implementará el siguiente código en python, teniendo el siguiente resultado: 
 
+Por lo que se implementó la siguiente función para obtener las muestras aleatorias:
 
 {
-	string myString;
 
-	cout << "input a string: ";
-	getline(cin, myString);
-	int length = myString.length();
-	
-	char charArray = new char * [length];
-
-	charArray = myString;
-	for(int i = 0; i < length; ++i){
-		cout << charArray[i] << " ";
-	}
-	
-	return 0;
+    def muestras(muestra,d,w):
+    F = np.random.uniform(-1000,1000,(muestra,d))
+    y = []
+    for i in range(len(F)):
+        x = np.r_[1,F[i]]
+        y.append(np.sign(np.dot(w,x)))
+    return np.c_[F,y]
+    
+    muestra = 100
+    F = muestras(muestra, d, w)
 }
 
+Donde w sigue siendo el predictor mencionado anteriormente. Teniendo esto se obtuvo las siguientes muestras:
 
-Produces something like this: 
+<div class="img_row">
+	<img class="col one" src="/img/muestra1.jpg">
+	<img class="col one" src="/img/muestra2.jpg">
+	<img class="col one" src="/img/muestra3.jpg">
+</div>
 
-{% highlight c++ %}
+Vemos que las muestras están distribuidas uniformemente
+
+
 
 int main(int argc, char const *argv[])
 {
-	string myString;
-
-	cout << "input a string: ";
-	getline(cin, myString);
-	int length = myString.length();
 	
-	char charArray = new char * [length];
-
-	charArray = myString;
-	for(int i = 0; i < length; ++i){
-		cout << charArray[i] << " ";
-	}
-	
-	return 0;
 }
 
 {% endhighlight %}
