@@ -6,6 +6,13 @@ description: Modelo PAC generalizado y predictores lineales
 ---
 En este capitulo vamos a considerar el algoritmo de Percetrón, y un ejemplo para ver su implementación. Para esto se considerará una clasificación en R^2
 
+Se implementó el código y se obtuvo la siguiente gráfica:
+<div class="img_row">
+	<img class="col one" src="/predictor.jpg">
+</div>
+
+
+
 Produces something like this: 
 
 {% highlight c++ %}
