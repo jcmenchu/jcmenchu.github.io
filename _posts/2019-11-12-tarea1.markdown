@@ -1,34 +1,54 @@
-<div class="img_row">
-	<img class="col three" ---
-layout: post
-title: a post with code
-date: 2015-07-15 15:09:00
-description: an example of a blog post with some code
 ---
-This theme implements a built-in Jekyll feature, the use of Pygments, for sytanx highlighting. It supports more than 100 languages. This example is in C++. All you have to do is wrap your code in a liquid tag: 
-{% raw  %}
-{% highlight c++ %}  <br/> code code code <br/> {% endhighlight %}{% endraw %}
+layout: post
+title: Tarea 1
+date: 2019-11-12 09:00:00
+description: Modelo de aprendizaje PAC
+---
+En este capitulo vamos a considerar el algoritmo de Percetrón, y un ejemplo para ver su implementación. Para esto se considerará una clasificación en R^2
 
-Produces something like this: 
+Se implementó el código en python y se obtuvo la siguiente gráfica:
 
-{% highlight c++ %}
+<div class="img_row">
+	<img class="col one" src="/img/predictor.jpg">
+</div>
 
-int main(int argc, char const *argv[])
+Como se puede observar el la gráfica, en este se tiene el predictor que está dado por w = (-1,1,1). En el cual muestra que la frontera de ambas clases.
+
+Para el siguiente punto, se supondrá que la distribución es homogénea, entonces, para generar puntos aleatorios en R^2. Se considerará una distribución uniforme en R^2. A continuación se implementará el siguiente código en python, teniendo el siguiente resultado: 
+
+Por lo que se implementó la siguiente función para obtener las muestras aleatorias:
+
 {
-	string myString;
 
-	cout << "input a string: ";
-	getline(cin, myString);
-	int length = myString.length();
-	
-	char charArray = new char * [length];
-
-	charArray = myString;
-	for(int i = 0; i < length; ++i){
-		cout << charArray[i] << " ";
-	}
-	
-	return 0;
+    def muestras(muestra,d,w):
+    F = np.random.uniform(-1000,1000,(muestra,d))
+    y = []
+    for i in range(len(F)):
+        x = np.r_[1,F[i]]
+        y.append(np.sign(np.dot(w,x)))
+    return np.c_[F,y]
+    
+    muestra = 100
+    F = muestras(muestra, d, w)
 }
 
-{% endhighlight %}
+Donde w sigue siendo el predictor mencionado anteriormente. Teniendo esto se obtuvo las siguientes muestras:
+
+<div class="img_row">
+	<img class="col one" src="/img/muestra1.jpg">
+	<img class="col one" src="/img/muestra2.jpg">
+	<img class="col one" src="/img/muestra3.jpg">
+</div>
+
+Vemos que las muestras están distribuidas uniformemente
+
+En el siguiente paso se gráficarán las muestras de 1, 2,..1000 por lo cual vamos a tomar conjuntos de 100 muestras cada uno. Se calculará el promedio de las normas de cada conjunto de entrenamiento. A continuación se mostrarán tres gráficas que mostrarán el conjunto de 100 muestras de entrenamiento en conjunto. 
+
+<div class="img_row">
+	<img class="col one" src="/img/conjunto1.jpg">
+	<img class="col one" src="/img/conjunto2.jpg">
+	<img class="col one" src="/img/conjunto3.jpg">
+</div>
+
+
+Vemos que conforme se va aumenta la muestra de 100 en 100 hasta 1000, este tiende a la norma máxima.
