@@ -15,7 +15,7 @@ Se definirá una función para tener los conjuntos de entrenamiento, dicha funci
 {
 
 	def muestra(muestras):
-   		return np.random.uniform(0,2,(muestras,2))
+   	return np.random.uniform(0,2,(muestras,2))
 }
 
 Para implementar una clase de hipótesis h: que vaya de X al conjunto de {0,1} y esto será para todo h en X.
@@ -23,65 +23,37 @@ Para implementar una clase de hipótesis h: que vaya de X al conjunto de {0,1} y
 {
 
 	def claseH(l):
-    		return np.linspace(0,1,round(1/l))
+    	return np.linspace(0,1,round(1/l))
 	
 }
 
 Ahora para calcular los errores de generalización se definirá la siguiente función en python.
 
 
-	def ErrorG(h):
+	def ErrorG(hipotesis):
 	    cota = 1-1/np.sqrt(2)
-	    if h < cota:
+	    if hipotesis < cota:
 		return 1/2-2*h+h**2
-	    elif h > cota:
+	    elif hipotesis > cota:
 		return -1/2+2*h-h**2
 	    else:
 		return 0
 
+Para obtener los rectangulos para los Erros de minimización Emperico se define la siguiente función:
+
+	def ErrorMEmpirico(ClaseHipo,clase):
+	   error = 1
+	   EMRh = 0
+	   for h in np.nditer(ClaseHipo):
+		LError = ErrorEm(h,Clase) 
+		  if LError < error:
+		  error = LError
+		  ErrorMEmpiricoh = h
+	   return ErrorMEmpricoh
+
+¿Qué dice en este caso el resultado de que las clases de hipótesis finitas son PAC aprendibles con complejidad de muestra log(|H|/δ)/ϵ?
+Esto nos muestra el número de muestras que se necesita para que el error de generalización sea el mínimo, es decir, que dado un ϵ arbitrario, este siempre este bajo control teniedo la probabiblidad 1−δ. 
 
 
-<div class="img_row">
-	<img class="col one" src="/img/predictor.jpg">
-</div>
-
-Como se puede observar el la gráfica, en este se tiene el predictor que está dado por w = (-1,1,1). En el cual muestra que la frontera de ambas clases.
-
-Para el siguiente punto, se supondrá que la distribución es homogénea, entonces, para generar puntos aleatorios en R^2. Se considerará una distribución uniforme en R^2. A continuación se implementará el siguiente código en python, teniendo el siguiente resultado: 
-
-Por lo que se implementó la siguiente función para obtener las muestras aleatorias:
-
-{
-
-    def muestras(muestra,d,w):
-    F = np.random.uniform(-1000,1000,(muestra,d))
-    y = []
-    for i in range(len(F)):
-        x = np.r_[1,F[i]]
-        y.append(np.sign(np.dot(w,x)))
-    return np.c_[F,y]
-    
-    muestra = 100
-    F = muestras(muestra, d, w)
-}
-
-Donde w sigue siendo el predictor mencionado anteriormente. Teniendo esto se obtuvo las siguientes muestras:
-
-<div class="img_row">
-	<img class="col one" src="/img/muestra1.jpg">
-	<img class="col one" src="/img/muestra2.jpg">
-	<img class="col one" src="/img/muestra3.jpg">
-</div>
-
-Vemos que las muestras están distribuidas uniformemente
-
-En el siguiente paso se gráficarán las muestras de 1, 2,..1000 por lo cual vamos a tomar conjuntos de 100 muestras cada uno. Se calculará el promedio de las normas de cada conjunto de entrenamiento. A continuación se mostrarán tres gráficas que mostrarán el conjunto de 100 muestras de entrenamiento en conjunto. 
-
-<div class="img_row">
-	<img class="col one" src="/img/conjunto1.jpg">
-	<img class="col one" src="/img/conjunto2.jpg">
-	<img class="col one" src="/img/conjunto3.jpg">
-</div>
 
 
-Vemos que conforme se va aumenta la muestra de 100 en 100 hasta 1000, este tiende a la norma máxima.
