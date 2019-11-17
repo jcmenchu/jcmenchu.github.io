@@ -2,9 +2,20 @@
 layout: post
 title: Teorema NFL y dimensión VC
 date: 2019-11-12 15:09:00
-description: an example of a blog post with some code
+description: Teoremas
 ---
 Shattering:
 
 Para definir el concepto de Shattering, definamos a f una línea recta como modelo de clasificación en punto en un plano bidimensinal. La línea que debe separar los puntos de datos positivos de los puntos negativos. En este ejemplo se considerará 3 puntos que de hecho puede romperse con este modelo, es decir, la idea es intuitiva, ya que dado esos 3 puntos, que no sean colineales se va a poder romper. Sin embargo, ningún conjunto de 4 puntos puede romperse, y esto es dado por Teorema, los cuatro puntos pueden devidirse en dos subconjuntos con cascos convexos que se cruzan, por lo que no es posible separar uno de estos dos subconjuntos del otro. 
+
+<div class="img_row">
+	<img class="col one" src="/img/shattering.jpg">
+</div>
+
+Dimensión VC:
+
+La dimensión VC es una medida de la capacidad de un clasificador binario. Es decir, que se puede encontrar un conjunto de n puntos para el cual puede ser destruido por el clasificador. Tomando el ejemplo anterior de los puntos de clasificación, vemos que la dimensión es de este es de 4.
+
+Aprendibilidad:
+
 
