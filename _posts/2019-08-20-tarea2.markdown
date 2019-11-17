@@ -47,6 +47,7 @@ En el siguiente paso se gráficarán las muestras de 1, 2,..1000 por lo cual vam
 <div class="img_row">
 	<img class="col one" src="/img/conjunto1.jpg">
 	<img class="col one" src="/img/conjunto2.jpg">
+	<img class="col one" src="/img/conjunto3.jpg">
 </div>
 
 
