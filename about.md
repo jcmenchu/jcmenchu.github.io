@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Biografía
-permalink: /about/
+permalink: /Biografía/
 ---
 
 <img class="col one right" src="/img/prof_pic.jpg">
